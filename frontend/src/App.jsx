@@ -1,12 +1,15 @@
-function App() {
+import React from "react";
+
+const App = () => {
   return (
-    <div className="p-4">
-      <h1 className="text-4xl text-blue-500">Hello, Tailwind!</h1>
-      <p className="mt-2 text-gray-700">
-        If you see blue heading text, Tailwind is working!
+    <>
+      <div>App</div>
+      <h1>Welcome to the App</h1>
+      <p className="text-4xl text-blue-500">
+        This is a simple React application.
       </p>
-    </div>
+    </>
   );
-}
+};
 
 export default App;
