@@ -1,4 +1,5 @@
 import logo from '../../assets/logo.png';
+import { Link } from "react-router-dom";
 
 import React from "react";
 import {
@@ -81,22 +82,22 @@ export default function NavbarDemo() {
 
         {/* Center: Navigation */}
         <ul className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex space-x-12">
-          {navItems.map((item) => (
-            <li key={item.label}>
-              <a
-                href={item.href}
-                className="group flex flex-col items-center gap-y-1 transition duration-300"
-              >
-                <div className="text-3xl text-[#FFFF33] group-hover:text-[#FFD700] transition-transform duration-500 ease-out transform group-hover:scale-125 group-hover:-translate-y-1 group-hover:rotate-6 drop-shadow-[0_0_10px_#f59e0b]">
-                  {item.icon}
-                </div>
-                <span className="relative text-sm font-medium tracking-wide text-[#FFFF33] group-hover:text-[#FFD700] transition-colors duration-300 after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-0.5 after:bg-[#f59e0b] after:transition-all after:duration-500 group-hover:after:w-full group-hover:after:left-0">
-                  {item.label}
-                </span>
-              </a>
-            </li>
-          ))}
-        </ul>
+  {navItems.map((item) => (
+    <li key={item.label}>
+      <Link
+        to={item.href} // ✅ changed from href to to
+        className="group flex flex-col items-center gap-y-1 transition duration-300"
+      >
+        <div className="text-3xl text-[#FFFF33] group-hover:text-[#FFD700] transition-transform duration-500 ease-out transform group-hover:scale-125 group-hover:-translate-y-1 group-hover:rotate-6 drop-shadow-[0_0_10px_#f59e0b]">
+          {item.icon}
+        </div>
+        <span className="relative text-sm font-medium tracking-wide text-[#FFFF33] group-hover:text-[#FFD700] transition-colors duration-300 after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-0.5 after:bg-[#f59e0b] after:transition-all after:duration-500 group-hover:after:w-full group-hover:after:left-0">
+          {item.label}
+        </span>
+      </Link>
+    </li>
+  ))}
+</ul>
   
         {/* Right: Avatar & Login */}
         <div className="absolute right-6 top-1/2 -translate-y-1/2 flex items-center gap-4">
