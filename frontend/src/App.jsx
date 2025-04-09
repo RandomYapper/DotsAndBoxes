@@ -1,15 +1,25 @@
 import React from "react";
-import NavbarDemo from "./components/ui/navBar.jsx";
-import GameBoard from "./components/ui/GameBoard.jsx";
+import {
+  Route,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
 
-const App = () => {
-  return (
-    <div className="bg-black min-h-screen w-full text-white">
-      <NavbarDemo />
-      <GameBoard rows={4} cols={7} />
-      {/* Your main content can go here */}
-    </div>
-  );
-};
+import Layout from "./layout/mainLayout";
+
+// import NotFoundPage from "./pages/NotFoundPage"; // create if needed
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Layout />}>
+      
+      {/* Add more routes if needed */}
+      {/* <Route path="*" element={<NotFoundPage />} /> */}
+    </Route>
+  )
+);
+
+const App = () => <RouterProvider router={router} />;
 
 export default App;
