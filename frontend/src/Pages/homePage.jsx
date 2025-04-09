@@ -23,7 +23,7 @@ const GamePage = () => {
             Dots & Boxes
           </h1>
         </motion.div>
-        {/* Animated Play Button */}
+        {/* Animatd Play Button */}
         <motion.button
           onClick={handlePlay}
           initial={{ opacity: 0, scale: 0.8 }}
